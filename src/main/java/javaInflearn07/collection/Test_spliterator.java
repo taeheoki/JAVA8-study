@@ -13,6 +13,10 @@ public class Test_spliterator {
         names.add("mijeong");
 
         Spliterator<String> spliterator = names.spliterator();
-        while(spliterator.tryAdvance(System.out::println));
+        System.out.println("=========================");
+        Spliterator<String> trySplit = spliterator.trySplit();
+        while (spliterator.tryAdvance(System.out::println));
+        System.out.println("=========================");
+        while (trySplit.tryAdvance((System.out::println)));
     }
 }
