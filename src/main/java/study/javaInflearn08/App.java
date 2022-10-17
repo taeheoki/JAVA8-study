@@ -2,6 +2,7 @@ package study.javaInflearn08;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class App {
@@ -17,5 +18,15 @@ public class App {
             return s.toUpperCase();
         });
         names.forEach(System.out::println);
+
+        System.out.println("=============");
+        System.out.println("병렬 처리 표현");
+
+        List<String> collect = names.parallelStream().map(s -> {
+            System.out.println(s + " " + Thread.currentThread().getName());
+            return s.toUpperCase();
+        }).collect(Collectors.toList());
+
+        collect.forEach(System.out::println);
     }
 }
