@@ -9,10 +9,13 @@ public class App {
         ArrayList<String> names = new ArrayList<>();
         names.add("taeheoki");
         names.add("42seoul");
+        names.add("acho");
+        names.add("woonchoi");
 
-        Stream<String> stringStream = names.stream().map(String::toUpperCase);
+        Stream<String> stringStream = names.stream().map(s -> {
+            System.out.println(s);
+            return s.toUpperCase();
+        });
         names.forEach(System.out::println);
-        System.out.println("=======================");
-        stringStream.forEach(System.out::println);
     }
 }
