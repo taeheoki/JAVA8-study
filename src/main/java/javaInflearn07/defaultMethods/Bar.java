@@ -1,5 +1,7 @@
 package javaInflearn07.defaultMethods;
 
-public interface Bar extends Foo {
-    void hello();
+public interface Bar {
+    default void hello() {
+        System.out.println("Bar");
+    }
 }
