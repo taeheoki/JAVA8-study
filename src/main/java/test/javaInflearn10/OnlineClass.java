@@ -1,5 +1,7 @@
 package test.javaInflearn10;
 
+import java.util.Optional;
+
 public class OnlineClass {
     private Integer id;
     private String title;
@@ -36,11 +38,8 @@ public class OnlineClass {
         this.closed = closed;
     }
 
-    public Progress getProgress() {
-        if (this.progress == null) {
-            throw new IllegalStateException();
-        }
-        return progress;
+    public Optional<Progress> getProgress() {
+        return Optional.ofNullable(progress);
     }
 
     public void setProgress(Progress progress) {

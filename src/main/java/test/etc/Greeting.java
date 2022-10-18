@@ -1,4 +1,4 @@
-package test;
+package test.etc;
 
 public class Greeting {
     private String name;
