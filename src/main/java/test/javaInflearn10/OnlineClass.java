@@ -37,6 +37,9 @@ public class OnlineClass {
     }
 
     public Progress getProgress() {
+        if (this.progress == null) {
+            throw new IllegalStateException();
+        }
         return progress;
     }
 
